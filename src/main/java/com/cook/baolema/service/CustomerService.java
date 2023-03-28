@@ -32,4 +32,5 @@ public interface CustomerService {
 
     List<RankAndNumber> selectRank();
 
+    List<Customer> selectByRank(int rank);
 }

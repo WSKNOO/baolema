@@ -89,6 +89,14 @@ public class CustomerController {
         return new Result(rankAndNumbers != null?Code.GET_OK:Code.GET_ERR,rankAndNumbers,rankAndNumbers != null?"":"查询失败");
     }
 
-
-
+    @GetMapping("/getbyrank/{rank}")
+    public Result selectByRank(@PathVariable Integer rank){
+        if(rank == -1){
+            return selectAll();
+        }
+        List<Customer> customers = customerService.selectByRank(rank);
+        Integer code = customers != null ? Code.GET_OK : Code.GET_ERR;
+        String msg = customers != null ? "" : "数据查询失败，请重试！";
+        return new Result(code,customers,msg);
+    }
 }

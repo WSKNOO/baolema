@@ -64,8 +64,6 @@ public class StatisticsController {
         for (HourAndOrderNumber hourAndOrderNumber : hourAndOrderNumbers) {
             list.add(hourAndOrderNumber.getNumberOfOrders());
         }
-        System.out.println(list);
-
         int max = Integer.MIN_VALUE;
         int maxHour = 0;
         for(int i = 0;i<12;i++){
@@ -86,7 +84,6 @@ public class StatisticsController {
         list.add(maxHour);
         System.out.println(list);
         return new Result(Code.GET_OK,list,"");
-
     }
 
     @GetMapping("/getgooddishes")

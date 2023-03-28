@@ -79,4 +79,9 @@ public class CustomerServiceImp implements CustomerService {
         return customerDao.selectRank();
     }
 
+    @Override
+    public List<Customer> selectByRank(int rank) {
+        return customerDao.selectByRank(rank);
+    }
+
 }

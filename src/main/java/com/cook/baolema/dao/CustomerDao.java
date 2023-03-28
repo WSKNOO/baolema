@@ -52,4 +52,7 @@ public interface CustomerDao {
 
     @Select("select rank,count(*) as number from tb_customer group by rank order by rank")
      List<RankAndNumber> selectRank();
+
+    @Select("select * from tb_customer where rank=#{rank}")
+    List<Customer> selectByRank(int rank);
 }
